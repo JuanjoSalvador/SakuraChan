@@ -1,6 +1,6 @@
 require 'telegram/bot'
 
-token = '172744597:AAH0t3LnB5f1rD7m85sDW9cd8mukFmKH7QU'
+token = 'YOUR TOKEN HERE'
 
 Telegram::Bot::Client.run(token) do |bot|
 
