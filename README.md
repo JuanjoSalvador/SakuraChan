@@ -4,3 +4,12 @@
 Basado el API de Telegram y el módulo NodeJS de [@yagop](https://github.com/yagop/node-telegram-bot-api) https://github.com/yagop/node-telegram-bot-api
 
 Para traducir usa el módulo `bing-translate` de NodeJS.
+
+### Uso
+
+Prueba a SakuraChan en http://telegram.me/SakuraChanBot
+
+### Licencia
+
+Ver [LICENSE](https://github.com/JuanjoSalvador/SakuraChan/blob/master/LICENSE)
+
