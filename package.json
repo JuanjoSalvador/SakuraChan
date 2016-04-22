@@ -1,0 +1,23 @@
+{
+  "name": "sakurachan",
+  "version": "0.2.0",
+  "description": "SakuraChan es un bot de Telegram que traduce de japonés a español y de español a japonés.",
+  "dependencies": {
+    "bing-translate": "^0.0.2",
+    "node-telegram-bot-api": "^0.21.1"
+  },
+  "main": "SakuraChan.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuanjoSalvador/SakuraChan.git"
+  },
+  "author": "Juanjo Salvador",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/JuanjoSalvador/SakuraChan/issues"
+  },
+  "homepage": "https://github.com/JuanjoSalvador/SakuraChan#readme"
+}
