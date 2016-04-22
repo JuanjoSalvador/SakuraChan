@@ -17,12 +17,26 @@ console.log("Sakura-chan está funcionando!");
 sakura.onText(/\/jp (.+)/, function (msg, match) {
   var fromId = msg.from.id;
   var input  = match[1];
-  bing.translate(input, 'ja', 'es', function(err, res) { sakura.sendMessage(fromId, "La traducción para '" + input + "' es: " + res.translated_text) });
+  if (input) {
+        bing.translate(input, 'ja', 'es', function(err, res) { sakura.sendMessage(fromId, "La traducción para '" + input + "' es: " + res.translated_text) });
+  } else {
+        sakura.sendMessage(fromId, "¡Necesito un texto para traducir! Indícamelo con /jp texto");
+  }
 });
 
 // Español a Japonés
 sakura.onText(/\/esp (.+)/, function (msg, match) {
   var fromId = msg.from.id;
   var input  = match[1];
-  bing.translate(input, 'es', 'ja', function(err, res) { sakura.sendMessage(fromId, "La traducción para '" + input + "' es: " + res.translated_text) });
+  if (input) {
+        bing.translate(input, 'es', 'ja', function(err, res) { sakura.sendMessage(fromId, "La traducción para '" + input + "' es: " + res.translated_text) });
+  } else {
+        sakura.sendMessage(fromId, "¡Necesito un texto para traducir! Indícamelo con /esp texto");
+  }
+});
+
+// Repo
+sakura.onText(/\/repo/, function (msg) {
+  var fromId = msg.from.id;
+  sakura.sendMessage(fromId, "https://github.com/JuanjoSalvador/SakuraChan");
 });
