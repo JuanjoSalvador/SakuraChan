@@ -12,27 +12,23 @@ bing.init({
 // Inicialización
 var sakura = new TelegramBot(token, {polling: true});
 console.log("Sakura-chan está funcionando!");
+var jap2esp = 0; // Contador de traducciones japones-español
+var esp2jap = 0; // Contador de traducciones español-japones
 
 // Japonés a Español
 sakura.onText(/\/jp (.+)/, function (msg, match) {
   var fromId = msg.from.id;
   var input  = match[1];
-  if (input) {
-        bing.translate(input, 'ja', 'es', function(err, res) { sakura.sendMessage(fromId, "La traducción para '" + input + "' es: " + res.translated_text) });
-  } else {
-        sakura.sendMessage(fromId, "¡Necesito un texto para traducir! Indícamelo con /jp texto");
-  }
+  bing.translate(input, 'ja', 'es', function(err, res) { sakura.sendMessage(fromId, "La traducción para '" + input + "' es: " + res.translated_text) });
+  jap2esp++;
 });
 
 // Español a Japonés
 sakura.onText(/\/esp (.+)/, function (msg, match) {
   var fromId = msg.from.id;
   var input  = match[1];
-  if (input) {
-        bing.translate(input, 'es', 'ja', function(err, res) { sakura.sendMessage(fromId, "La traducción para '" + input + "' es: " + res.translated_text) });
-  } else {
-        sakura.sendMessage(fromId, "¡Necesito un texto para traducir! Indícamelo con /esp texto");
-  }
+  bing.translate(input, 'es', 'ja', function(err, res) { sakura.sendMessage(fromId, "La traducción para '" + input + "' es: " + res.translated_text) });
+  esp2jap++;
 });
 
 // Repo
