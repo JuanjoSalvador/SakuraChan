@@ -3,7 +3,7 @@
 
 Basado el API de Telegram y el módulo NodeJS de [@yagop](https://github.com/yagop/node-telegram-bot-api) https://github.com/yagop/node-telegram-bot-api
 
-Para traducir usa el módulo `bing-translate` de NodeJS.
+Para traducir usa el módulo `node-google-translate-free` de node.js por [@statickidz](https://github.com/statickidz/node-google-translate-free).
 
 ## Uso
 Prueba a SakuraChan en http://telegram.me/SakuraChanBot
