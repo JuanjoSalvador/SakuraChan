@@ -1,12 +1,9 @@
 // Requires
-var TelegramBot = require('node-telegram-bot-api');            
+var TelegramBot = require('node-telegram-bot-api');
+var translate   = require('./node-google-translate-free/lib/translate');            
 
 // Token
-var token = ''; // Cambiar el token por el token de SakuraTranslate
-var bt = require('bing-translate').init({ 
-                                        client_id: 'SakuraTranslate_bot', 
-                                        client_secret: '' // Token secreto de Sakura en Bing Translate
-                                      });
+var token = 'YOUR_TOKEN_HERE'; // Cambiar el token por el token de SakuraTranslate
 
 // Inicialización
 var sakura = new TelegramBot(token, {polling: true});
@@ -20,18 +17,16 @@ sakura.onText(/\/start/, function (msg) {
 
 // Japonés a Español
 sakura.onText(/\/jp (.+)/, function (msg, match) {
-  console.log("Mensaje enviado: ", msg.text); // Debug
   var fromId = msg.from.id;
   var input  = match[1];
-  bt.translate(input, 'ja', 'es', function(err, res) { sakura.sendMessage(fromId, "'" + input + "', traducido, significa '" + res.translated_text + "'."); });
+  translate({ text: input, source: 'ja', target: 'es' }, function(result) { sakura.sendMessage(fromId, "'" + input + "', traducido, significa '" + result + "'."); });
 });
 
 // Español a Japonés
 sakura.onText(/\/esp (.+)/, function (msg, match) {
-  console.log("Mensaje enviado: ", msg.text); // Debug
   var fromId = msg.from.id;
   var input  = match[1];
-  bt.translate(input, 'es', 'ja', function(err, res) { sakura.sendMessage(fromId, "En japonés, '" + input + "' se escribe " + res.translated_text) });
+  translate({ text: input, source: 'es', target: 'ja' }, function(result) { sakura.sendMessage(fromId, "'" + input + "', traducido, significa '" + result + "'."); });
 });
 
 // Repo
