@@ -3,7 +3,7 @@ var TelegramBot = require('node-telegram-bot-api');
 var translate   = require('./lib/translate');            
 
 // Token
-var token = '189947527:AAEulV_Ac5X_WTfhXqIcey9pgje9GYNUSyU'; // Cambiar el token por el token de SakuraTranslate
+var token = ''; // Cambiar el token por el token de SakuraTranslate
 
 // Inicialización
 var sakura = new TelegramBot(token, {polling: true});
