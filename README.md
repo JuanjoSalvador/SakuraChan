@@ -1,7 +1,7 @@
 # SakuraChan
 #### Telegram Bot. Traduce Japonés-Español a través de Bing Translator API.
 
-Basado el API de Telegram y el módulo NodeJS de [@yagop](https://github.com/yagop/node-telegram-bot-api) https://github.com/yagop/node-telegram-bot-api
+Basado el API de Telegram y el módulo node.js de [@yagop](https://github.com/yagop/node-telegram-bot-api) https://github.com/yagop/node-telegram-bot-api
 
 Para traducir usa el módulo `node-google-translate-free` de node.js por [@statickidz](https://github.com/statickidz/node-google-translate-free).
 
